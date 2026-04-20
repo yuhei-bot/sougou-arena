@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新体育館 | 安心・快適な市民スポーツ施設</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="fv">
+        <div class="fv-content">
+            <h1>総合体育館</h1>
+            <div class="fv-news">
+                <span class="news-label">重要</span>
+                <p class="news-text">本日のプール利用は13:00からとなります。巡回スタッフ増員中！</p>
+            </div>
+            <h2>館内スタッフが巡回しているので、<br>子供だけでも安心して利用できます</h2>
+            <button class="btn-fv" onclick="scrollToSection('calendar')">今すぐ空き状況をチェック</button>
+        </div>
+    </section>
+
+    <section class="facilities">
+        <h2 class="section-title">施設案内</h2>
+        <div class="facility-grid">
+            <div class="facility-card" onclick="openSlider('アリーナ')">
+                <div class="label">予約可</div>
+                <div class="img-placeholder">🏟️</div>
+                <p>アリーナ</p>
+            </div>
+            <div class="facility-card" onclick="openSlider('トレーニングルーム')">
+                <div class="label">予約可</div>
+                <div class="img-placeholder">💪</div>
+                <p>トレーニングルーム</p>
+            </div>
+            <div class="facility-card" onclick="openSlider('プール')">
+                <div class="label">予約可</div>
+                <div class="img-placeholder">🏊</div>
+                <p>プール</p>
+            </div>
+            <div class="facility-card" onclick="openSlider('グランド')">
+                <div class="label">予約可</div>
+                <div class="img-placeholder">🏃</div>
+                <p>グランド</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="calendar" class="calendar-section">
+        <h2 class="section-title">利用状況を伝える・お知らせ風に表示</h2>
+        <div class="calendar-container">
+            <div class="calendar-nav">
+                <button onclick="changeMonth(-1)">◀ 前の月</button>
+                <h3 id="current-month-display">2026年 4月</h3>
+                <button onclick="changeMonth(1)">次の月 ▶</button>
+            </div>
+            <div class="calendar-controls">
+                <button id="tab-status" class="tab-btn active" onclick="switchCalendarMode('status')">利用状況</button>
+                <button id="tab-forecast" class="tab-btn" onclick="switchCalendarMode('forecast')">混雑予報</button>
+            </div>
+
+            <div class="calendar-wrapper">
+                <div class="calendar-weekday-header">
+                    <div class="weekday sun">日</div>
+                    <div class="weekday">月</div>
+                    <div class="weekday">火</div>
+                    <div class="weekday">水</div>
+                    <div class="weekday">木</div>
+                    <div class="weekday">金</div>
+                    <div class="weekday sat">土</div>
+                </div>
+                <div id="calendar-body" class="calendar-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="interior-info">
+        <h2 class="section-title">館内設備のご案内</h2>
+        <div class="info-grid">
+            <div class="info-item" onclick="openPhoto('reception')">
+                <div class="icon-placeholder">💁‍♂️</div>
+                <p>受付（予約・案内）</p>
+            </div>
+            <div class="info-item" onclick="openPhoto('seats')">
+                <div class="icon-placeholder">🪑</div>
+                <p>観覧席</p>
+            </div>
+            <div class="info-item" onclick="openPhoto('toilet')">
+                <div class="icon-placeholder">🚻</div>
+                <p>お手洗い・おむつ替え</p>
+            </div>
+            <div class="info-item" onclick="openPhoto('water')">
+                <div class="icon-placeholder">🚰</div>
+                <p>給水ポイント</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2 class="section-title">よくある質問</h2>
+        <div class="faq-container">
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-toggle">レンタルはありますか？</button>
+                    <div class="faq-answer">シューズ・ラケット等完備しています。</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle">子供だけの利用は可能ですか？</button>
+                    <div class="faq-answer">はい、スタッフが巡回しておりますので可能です。</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle">駐車場はありますか？</button>
+                    <div class="faq-answer">施設横に無料駐車場を完備しています。</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle">利用時間は何時までで館内の時間は何時までか？</button>
+                    <div class="faq-answer">開館は9時、最終退館は21時までとなります。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-overlay" class="overlay" onclick="closeModal()">
+        <div id="modal-content" class="modal" onclick="event.stopPropagation()"></div>
+    </div>
+
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
